@@ -22,25 +22,6 @@ import "sanstrap/dist/css/sanstrap.css";
 import "./index.css";
 
 // check for token  to keep user login
-if (localStorage.jwtToken) {
-  //set auth token header auth
-  const token = localStorage.jwtToken;
-  setAuthToken(token);
-  // Decode token and get user info and exp token info
-  const decoded = jwt_decode(token);
-  // Set user and isAuthenticated
-  store.dispatch(setCurrentUser(decoded));
-
-  //Check for expired token
-  const currentTime = Date.now() / 1000; // to get in milliseconds
-  if (decoded.exp < currentTime) {
-    //logout user
-    store.dispatch(logoutUser());
-
-    //Redirect to login
-    window.location.href = "./login";
-  }
-}
 
 function App() {
   return (
@@ -48,11 +29,6 @@ function App() {
       <Router>
         <div className="App">
           <Route exact path="/" component={Landing} />
-          {/* <Route exact path="/register" component={Register} />
-          <Route exact path="/login" component={Login} /> */}
-          {/* <Switch>
-            <PrivateRoute exact path="/dashboard" component={Dashboard} />
-          </Switch> */}
         </div>
       </Router>
     </Provider>
