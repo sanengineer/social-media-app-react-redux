@@ -1,10 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-// Related to Authentication
-import setAuthToken from "./utils/setAuthToken";
-import { setCurrentUser, logoutUser } from "./actions/authAction";
-
 // Related to store
 import { Provider } from "react-redux";
 import store from "./store/store";
