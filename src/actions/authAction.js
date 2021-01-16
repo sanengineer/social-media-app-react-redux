@@ -1,7 +1,6 @@
 import axios from "axios";
 import setAuthToken from "../utils/setAuthToken";
 import * as actionTypes from "./actionTypes";
-require("dotenv").config();
 
 var urlHeroku = "https://sosmetend.herokuapp.com/api/v1";
 
